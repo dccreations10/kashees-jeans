@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KASHEE´S Jeans | Denim Premium para Mujer</title>
+  <meta name="description" content="KASHEE´S Jeans – Denim premium femenino. Compra online jeans wide leg, rectos, skinny, jorts y shorts." />
+
+  <!-- SEO básico -->
+  <meta name="keywords" content="jeans mujer, denim premium, wide leg, skinny, jeans colombianos, Kashee's Jeans" />
+
+  <style>
+    :root{
+      --black:#0e0e0e;
+      --gray:#f5f5f5;
+      --gold:#c6a75e;
+    }
+    *{box-sizing:border-box}
+    body { margin:0; font-family:'Helvetica Neue', Arial, sans-serif; background:#fff; color:#111; }
+    header { padding:20px 60px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #eee; position:sticky; top:0; background:#fff; z-index:100; }
+    header h1 { font-size:26px; letter-spacing:4px; }
+    nav a { margin-left:25px; text-decoration:none; color:#111; font-weight:500; }
+    nav a:hover{ color:var(--gold); }
+
+    .hero { height:85vh; background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)), url('https://images.unsplash.com/photo-1520975922323-7a4b8c2c8cfa') center/cover; display:flex; align-items:center; justify-content:center; color:#fff; text-align:center; }
+    .hero h2 { font-size:54px; margin-bottom:15px; letter-spacing:2px; }
+    .hero p { font-size:18px; letter-spacing:1px; }
+
+    .section { padding:90px 60px; }
+    .section h3 { font-size:34px; margin-bottom:50px; text-align:center; letter-spacing:2px; }
+
+    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:35px; }
+
+    .card { border:1px solid #eee; padding:20px; text-align:center; transition:.3s; }
+    .card:hover{ transform:translateY(-5px); box-shadow:0 15px 40px rgba(0,0,0,.08); }
+    .card img { width:100%; height:340px; object-fit:cover; }
+    .card h4 { margin:18px 0 6px; font-size:18px; }
+    .card span { font-weight:bold; color:var(--gold); }
+    .card button{ margin-top:15px; padding:10px 18px; border:1px solid var(--black); background:transparent; cursor:pointer; letter-spacing:1px; }
+    .card button:hover{ background:var(--black); color:#fff; }
+
+    footer { padding:50px; background:var(--black); color:#fff; text-align:center; }
+    footer p { font-size:14px; opacity:.7; }
+
+    /* WhatsApp */
+    .whatsapp{ position:fixed; bottom:20px; right:20px; background:#25d366; color:#fff; padding:14px 18px; border-radius:50px; text-decoration:none; font-weight:bold; box-shadow:0 10px 30px rgba(0,0,0,.25); }
+
+    /* Carrito */
+    #cart{ position:fixed; top:90px; right:20px; background:#fff; border:1px solid #ddd; padding:15px; width:260px; display:none; }
+    #cart h4{ margin-top:0 }
+    #cart ul{ list-style:none; padding:0 }
+    #cart li{ font-size:14px; margin-bottom:8px }
+    #cart button{ width:100%; margin-top:10px; padding:10px; background:var(--black); color:#fff; border:none; cursor:pointer }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>KASHEE´S</h1>
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#coleccion">Colección</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#" onclick="toggleCart()">🛒 Carrito</a>
+  </nav>
+</header>
+
+<section class="hero" id="inicio">
+  <div>
+    <h2>DENIM DE AUTOR</h2>
+    <p>Diseñado para mujeres que mandan</p>
+  </div>
+</section>
+
+<section class="section" id="coleccion">
+  <h3>COLECCIÓN</h3>
+  <div class="grid">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246" />
+      <h4>Wide Leg</h4>
+      <span>$189.000</span>
+      <select onchange="selectSize(this)">
+        <option value="">Selecciona talla</option>
+        <option>6</option><option>8</option><option>10</option><option>12</option><option>14</option>
+      </select>
+      <button onclick="addToCart('Wide Leg',189000)">Comprar ahora</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38" />
+      <h4>Bota Recta</h4>
+      <span>$179.000</span>
+      <button onclick="addToCart('Bota Recta',179000)">Agregar</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1542060748-10c28b62716c" />
+      <h4>Skinny Fit</h4>
+      <span>$169.000</span>
+      <button onclick="addToCart('Skinny Fit',169000)">Agregar</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="nosotros">
+  <h3>SOBRE LA MARCA</h3>
+  <p style="max-width:850px; margin:auto; text-align:center; font-size:18px; line-height:1.7;">
+    KASHEE´S Jeans representa lujo contemporáneo en denim. Cada silueta está pensada para estilizar, empoderar y elevar la presencia femenina.
+  </p>
+</section>
+
+<section class="section" id="contacto">
+  <h3>ATENCIÓN PERSONALIZADA</h3>
+  <p style="text-align:center;">📩 contacto@kasheesjeans.com<br>📱 Instagram: @kasheesjeans</p>
+</section>
+
+<footer>
+  <p>© 2026 KASHEE´S Jeans · Denim Premium</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/573000000000" target="_blank">WhatsApp</a>
+
+<div id="cart">
+  <h4>Carrito</h4>
+  <ul id="cartItems"></ul>
+  <button onclick="checkout()">Finalizar por WhatsApp</button>
+</div>
+
+<script>
+  let cart=[];
+  let selectedSize='';
+
+  function selectSize(sel){ selectedSize=sel.value; }
+
+  function addToCart(name,price){
+    cart.push({name:name,price:price,size:selectedSize||'No especificada'});({name,price});
+    alert(name+' agregado al carrito');
+  }
+
+  function toggleCart(){
+    document.getElementById('cart').style.display = document.getElementById('cart').style.display === 'block' ? 'none':'block';
+    renderCart();
+  }
+
+  function renderCart(){
+    let list=document.getElementById('cartItems');
+    list.innerHTML='';
+    cart.forEach(i=> msg += '- '+i.name+' | Talla '+i.size+' ($'+i.price+')%0A');(item=>{
+      let li=document.createElement('li');
+      li.textContent=item.name+' | Talla: '+item.size+' - $'+item.price.toLocaleString();+' - $'+item.price.toLocaleString();
+      list.appendChild(li);
+    });
+  }
+
+  function checkout(){
+    let msg='Hola 👋 quiero comprar en KASHEE´S Jeans:%0A';
+    cart.forEach(i=> msg += '- '+i.name+' ($'+i.price+')%0A');
+    window.open('https://wa.me/573000000000?text='+msg,'_blank');
+  }
+</script>
+
+</body>
+</html>
